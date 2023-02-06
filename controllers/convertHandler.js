@@ -14,7 +14,11 @@ function ConvertHandler() {
   
   this.getReturnUnit = function(initUnit) {
     let result;
-    
+    if(initUnit==="gal"||initUnit==="GAL"){
+      result = 'l'  
+    } else if (initUnit === 'l' || initUnit === 'L'){
+      result = 'gal'
+    }
     return result;
   };
 
@@ -29,7 +33,11 @@ function ConvertHandler() {
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
     let result;
-    
+    if(initUnit==="gal"||initUnit==="GAL"){
+      result = (initNum*galToL).toFixed(5);  
+    } else if (initUnit === 'l' || initUnit === 'L'){
+      result = (initNum/galToL).toFixed(5);
+    }
     return result;
   };
   
