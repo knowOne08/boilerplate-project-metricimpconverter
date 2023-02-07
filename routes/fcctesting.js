@@ -50,7 +50,7 @@ module.exports = function (app) {
       });
     });
   app.route('/_api/controllers/convertHandler.js')
-    .get(function(req, res, next) { 
+    .get(function(req, res, next) {
       console.log('requested');
       fs.readFile(__dirname + '/controllers/convertHandler.js', function(err, data) {
         if(err) return next(err);
